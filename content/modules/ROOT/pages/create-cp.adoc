@@ -42,7 +42,7 @@ oc create secret generic cinder-nfs-config --from-file=nfs-cinder-conf
 
 [source,bash,role=execute]
 ----
-oc create -f osp-ng-ctlplane-deploy.yaml
+oc create -f osp-ng-ctlplane-deploy.yaml -n openstack
 ----
 
 Wait until the OpenStack control plane deployment is completed:
