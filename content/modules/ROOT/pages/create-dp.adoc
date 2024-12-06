@@ -184,6 +184,12 @@ data:
 EOF
 ----
 
+Modified the edpm_container_registry_logins part with a available username and password for the registry.
+[source,bash,role=execute]
+----
+vim osp-ng-dataplane-node-set-deploy.yaml +`cat -n osp-ng-dataplane-node-set-deploy.yaml |grep "edpm_container_registry_logins" |awk '{print $1}'`
+----
+
 Deploy the Dataplane
 
 [source,bash,role=execute]
