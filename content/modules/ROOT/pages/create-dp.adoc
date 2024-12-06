@@ -43,6 +43,7 @@ chown -R qemu:qemu rhel9-*.qcow2
 virt-customize -a rhel9-guest.qcow2 --run-command 'growpart /dev/sda 4'
 virt-customize -a rhel9-guest.qcow2 --run-command 'xfs_growfs /'
 virt-customize -a rhel9-guest.qcow2 --root-password password:redhat
+virt-customize -a rhel9-guest.qcow2 --run-command 'systemctl enable chronyd'
 virt-customize -a rhel9-guest.qcow2 --run-command 'systemctl disable cloud-init'
 virt-customize -a /var/lib/libvirt/images/rhel9-guest.qcow2 --ssh-inject root:file:/root/.ssh/id_rsa.pub
 virt-customize -a /var/lib/libvirt/images/rhel9-guest.qcow2 --selinux-relabel
